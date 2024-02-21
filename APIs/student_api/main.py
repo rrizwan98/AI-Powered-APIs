@@ -5,6 +5,8 @@ from sqlmodel import Session, select
 from sqlmodel import SQLModel, Field, create_engine
 from typing import Optional
 
+from fastapi.middleware.cors import CORSMiddleware
+
 class Student(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     name: str
@@ -24,8 +26,17 @@ app = FastAPI(
     title = "Student API",
     description = "A simple API to perform CRUD operations on students.",
     version = "0.1",
-    servers=[{"url": "https://welcomed-starling-hopelessly.ngrok-free.app", "description": "Localhost"}], 
+    servers=[{"url": "https://singular-sought-sunbeam.ngrok-free.app", "description": "Localhost"}], 
 )
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows all origins
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all methods
+    allow_headers=["*"],  # Allows all headers
+)
+
 
 @app.on_event("startup")
 def on_startup():
