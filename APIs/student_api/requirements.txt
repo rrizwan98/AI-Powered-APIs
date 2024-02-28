@@ -2,3 +2,5 @@ fastapi
 uvicorn 
 sqlmodel 
 asyncpg
+psycopg2-binary
+pyyaml
