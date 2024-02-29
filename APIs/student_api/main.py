@@ -7,8 +7,7 @@ from routes import router as student_router
 app = FastAPI(
     title = "Student API",
     description = "A simple API to perform CRUD operations on students.",
-    version = "0.1",
-    servers=[{"url": "http://127.0.0.1:8000", "description": "Localhost"}],
+    version = "0.1"
 )
 
 app.add_middleware(
