@@ -7,7 +7,7 @@ client = TestClient(app)
 @pytest.fixture(scope="module")
 def new_student():
     return {
-        "name": "John Doe",
+        "name": "ali",
         "age": 20,
         "grade": "A"
     }
