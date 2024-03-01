@@ -9,6 +9,10 @@ def load_privacy_policy():
         privacy_policy = yaml.safe_load(file)
     return privacy_policy
 
+def get_session():
+    with Session(engine) as session:
+        yield session
+
 
 router = APIRouter()
 
