@@ -1,0 +1,6 @@
+GOOGLE_API_KEY = 'AIzaSyCGEUherYJud9qvqRZ9EWW_tvbOJla5mjM'
+
+Azure_username = "agricultureapi"
+Azure_password = "ry+9KCIesyYWtCshCWhKqwOpkIVp0r2lJP4PCutvTv+ACRDpTqFV"
+Azure_password2 = "Dxm9hkM4tQX+d0gwvuAvsR1XRTpPoWuUNLRxqq+rSJ+ACRBWmvUB"
+docker_login_token = "dckr_pat_F7bStCWLhU_JkD5SGRUH-wy1DZ0"
