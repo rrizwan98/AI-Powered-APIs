@@ -5,6 +5,7 @@ from sqlmodel import Session, select
 import yaml
 # from utils import read_student
 from utils import read_all_students, read_students, create_students, update_students, delete_students, privacy_policys
+from openai_assistent_api import studentAssistant
 
 def get_session():
     with Session(engine) as session:
@@ -59,6 +60,15 @@ async def delete_student(student_id: int):
     """
     delete_student = delete_students(student_id)
     return {"Student Delete Sucessfully": True}
+
+@router.get("/student/ai_powered_api")
+async def ai_powered_api(Qs: str):
+    """
+    Retrieves the AI powered API data from the 'ai_powered_api.yaml' file.
+
+    """
+    ai_api = studentAssistant(Qs)
+    return ai_api
 
 @router.get("/student/privacy")
 async def privacy_policy():

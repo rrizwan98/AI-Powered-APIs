@@ -4,3 +4,6 @@ sqlmodel
 asyncpg
 psycopg2-binary
 pyyaml
+python-dotenv
+openai 
+

@@ -1,0 +1,40 @@
+tools:
+  - type: function
+    function:
+      name: read_all_students_data
+  - type: function
+    function:
+      name: read_student_by_id
+      parameters:
+        type: object
+        properties:
+          student_id:
+            type: integer
+        required: ["student_id"]
+  - type: function
+    function:
+      name: create_new_students
+      parameters:
+        type: object
+        properties:
+          student: {"student": [Student]}
+        required: ["student"]
+  - type: function
+    function:
+      name: delete_student
+      parameters:
+        type: object
+        properties:
+          student_id:
+            type: integer
+        required: ["student_id"]
+
+
+bot_instructions: >
+  This GPT acts as a student database, providing information and managing student records. 
+  It should offer details like student names, enrollment status, course registrations, grades,
+  and any other relevant academic information. It will prioritize data accuracy and confidentiality,
+  ensuring sensitive information is handled appropriately. The GPT should ask for clarifications 
+  if needed and personalize responses to fit the user's inquiry.
+  It will avoid giving out personal data without verification of the user's authority to access such information.
+  

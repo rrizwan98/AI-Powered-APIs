@@ -3,7 +3,7 @@ from db import Session, engine, Student
 from sqlmodel import Session, select
 import yaml
 
-def read_all_students():
+def read_all_students() -> list[Student]:
     """
     Retrieve all students from the database.
 
@@ -14,7 +14,7 @@ def read_all_students():
         students = session.exec(select(Student)).all()
         return students
     
-def read_students(student_id):
+def read_students(student_id) -> Student:
     """
     Retrieve a student by their ID.
 
@@ -33,7 +33,7 @@ def read_students(student_id):
             raise HTTPException(status_code=404, detail="Student not found")
         return student
 
-def create_students(student: Student):
+def create_students(student: Student) -> Student:
     """
     Creates a new student record in the database.
 
@@ -49,7 +49,7 @@ def create_students(student: Student):
         session.refresh(student)
         return student
 
-def update_students(student_id: int, student: Student):
+def update_students(student_id: int, student: Student) -> Student:
     """
     Update a student in the database.
 
@@ -75,7 +75,7 @@ def update_students(student_id: int, student: Student):
         session.refresh(db_student)
         return db_student
 
-def delete_students(student_id: int):
+def delete_students(student_id: int) -> str:
     """
     Deletes a student with the given student_id.
     
