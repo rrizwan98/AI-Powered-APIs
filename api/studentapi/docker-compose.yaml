@@ -2,6 +2,7 @@ version: '3'
 services:
   web:
     build: .
+    image: rrizwan98/student-powered-api:web  # Specify image name with username/repo
     command: sh -c "uvicorn main:app --reload --host=0.0.0.0 --port=8000"
     env_file:
       - .env
